@@ -4,13 +4,12 @@ input = sys.stdin.readline
 class binary():
     def __init__(self):
         self.array = []
-
+    
     def search(self, start, end, num):
-        mid = int((start + end) / 2)
-        
+        mid = int((start+end) / 2)
         if start > len(self.array) or end < 0 or start > end:
             return False, start
-
+        
         if self.array[mid] == num:
             return True, mid
         elif start == end:
@@ -24,17 +23,20 @@ class binary():
             return self.search(mid+1, end, num)
 
     def insert(self, num):
-        _, pos = self.search(0, len(self.array)-1, num)
+        _, pos = self.search(0, len(self.array) - 1, num)
         self.array.insert(pos, num)
 
-bi = binary()
 n = int(input())
+bina = binary()
+a = list(input().rstrip().split())
+a.sort(reverse=True)
+for i in a:
+    bina.insert(int(i))
+
+m = int(input())
 for i in list(input().rstrip().split()):
-    bi.insert(int(i))
-_ = input()
-for i in list(input().rstrip().split()):
-    re, pos = bi.search(0, n-1, int(i))
+    re, _ = bina.search(0, n-1, int(i))
     if re:
-        print(1)
+        print(1, end=' ')
     else:
-        print(0)
+        print(0, end=' ')
