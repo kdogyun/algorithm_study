@@ -5,7 +5,7 @@ class binary():
     def __init__(self):
         self.array = []
     
-    def search(self, start, end, num):
+    def search(self, start, end, num): # O(logn)
         mid = int((start+end) / 2)
         if start > len(self.array) or end < 0 or start > end:
             return False, start
