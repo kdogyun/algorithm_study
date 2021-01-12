@@ -6,3 +6,7 @@ deq.popleft() # 왼쪽 꺼내기
 deq.pop() # 오른쪽 꺼내기
 print(deq)
 
+import copy
+copy.deepcopy()
+copy.copy()
+
