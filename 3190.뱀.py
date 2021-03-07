@@ -39,5 +39,10 @@ while True:
 
     if comm.setdefault(time, 0):
         m = (m+comm[time])%4
+    print('----------------------', time, '초')
+    for row in _map:
+        for item in row:
+            print(item, end=' ')
+        print()
 
 print(time)
