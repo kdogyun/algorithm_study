@@ -20,7 +20,7 @@ def kanpsack(n, w, array):
             if i==0 or w==0:
                 a[i][j] = 0
             # 현재 무게가 i번째의 무게보다 같거나 적어서 배낭에 넣을 수 있다면
-            elif array[i][0] <= j:
+            elif array[i][0] <= j:  
                 # i번째의 가치 + i번째의 무게를 뺀 나머지 공간에 넣을 수 있는 가치, 바로 윗 칸 가치
                 # 를 비교하여 큰 값을 선택
                 a[i][j] = max( array[i][1] + a[i-1][j-array[i][0]], a[i-1][j])
